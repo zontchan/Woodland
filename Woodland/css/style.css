@@ -1,0 +1,285 @@
+/* roboto-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/roboto-v30-latin-regular.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+ */
+       url('../fonts/roboto-v30-latin-regular.woff') format('woff'); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* montserrat-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/montserrat-v25-latin-regular.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+ */
+       url('../fonts/montserrat-v25-latin-regular.woff') format('woff'); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* montserrat-300 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 300;
+  src: url('../fonts/montserrat-v25-latin-300.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+ */
+       url('../fonts/montserrat-v25-latin-300.woff') format('woff'); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+body{
+  line-height: 1.6;
+  margin: 0;
+	font-family: 'Roboto';
+	font-size: 12px;
+	color: #313131;
+	background-color: #ffffff;
+	letter-spacing: 2px;
+	box-sizing: border-box;
+}
+.body-wrapper{
+	width: 67%;
+	height: 1000px;
+	margin: 0 auto;
+}
+.visually-hidden{
+	position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  width: 1px;
+}
+/*Header logog styles start*/
+.header{
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+}
+
+.header-logo-block{
+display: flex;
+justify-content: space-between;
+flex-wrap: wrap;
+flex-direction: row;
+border-bottom: 1px solid #31313163;
+padding-top: 35px;
+padding-bottom: 35px;
+}
+.header-burger-menu{
+	box-sizing: border-box;
+	width: 100px;
+	height: 50px;
+	background: url(../svg/menu-hamburger.svg) no-repeat left;
+	background-size: 30px;
+}
+.header-logo{
+	font-family: 'Montserrat';
+	font-size: 30px;
+	font-weight: 300;
+	text-transform: uppercase;
+	margin:0;
+	padding-top: 6px;
+}
+.header-logo-link{
+	text-decoration: none;
+	color: black;
+}
+.header-ico-wrapper{
+	width: 100px;
+	height: 60px;
+	display: flex;
+	flex-wrap: wrap;
+}
+.header-ico:hover, .header-ico:focus, .header-ico:active{
+ opacity: 50%;
+}
+.loupe-ico{
+	width: 50px;
+	height: 60px;
+    background: url(../svg/loupe-ico.svg) no-repeat center;
+	background-size: 30px;
+	cursor: pointer;
+}
+.basket-ico{
+	width: 50px;
+	height: 60px;
+	background: url(../svg/basket-ico.svg) no-repeat center;
+	background-size: 30px;
+	cursor: pointer;
+}
+/*Header logo styles end*/
+
+
+/*Header map styles end*/
+.header-map-block{
+	padding-top: 25px;
+}
+.map-socials-wrap{
+	margin-bottom: 40px;
+}
+.map-list{
+ display: flex;
+ flex-wrap: wrap;
+ list-style: none;
+  padding-left: 0;
+  align-items: center; 
+  padding: 0;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.social{
+ display: block;
+ box-sizing: border-box;
+ text-decoration:none;
+ background-repeat: no-repeat;
+ background-position: center;
+ background-size:17px;
+ width:24px;
+ height:24px;
+ font-size:0;
+ padding-right: 30px;
+}
+.wa-ico{
+ background-image:url(../svg/wa-ico.svg);
+}
+.tg-ico{
+ background-image:url(../svg/tg-ico.svg);
+}
+.vk-ico{
+ background-image:url(../svg/vk-ico.svg);
+}
+.map-catalog-list-item{
+	padding-left: 65px;
+}
+.map-catalog-list-item-link{
+	text-decoration: none;
+	color: #313131;
+	margin-right:50px ;
+}
+
+/*Header map styles end*/
+
+
+/*Burger popup styles start*/
+.popup-active{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.5);
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 2;
+}
+.burger-popup-wrapper{
+  display:none;
+}
+
+.popup-container{
+	width: 300px;
+	height: 100vh;
+	background-color: white;
+	display: flex;
+}
+.popup-content-wrap{
+	width: 80%;
+	margin: 0 auto;
+	padding-top: 35px;
+}
+.popup-header{
+		font-family: 'Montserrat';
+		font-size: 25px;
+		font-weight: 300;
+		text-transform: uppercase;
+		margin-bottom: 30px;
+		padding-bottom:15px;
+		border-bottom: 1px solid  #31313163;
+}
+.popup-close{
+    position: absolute;
+    width: 30px;
+    height: 16px;
+    top:10px;
+    left: 250px;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    text-indent: -9999px;
+    cursor: pointer;
+  }
+  .popup-close:before{
+    width: 25px;
+    height: 25px;
+    content: "";
+    background-image: url(../svg/cross.svg);
+    background-size: 25px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  }
+
+.popup-list{
+	list-style: none;
+	padding: 0;
+}
+.popup-list-item{
+	border-bottom: 1px solid  #31313163;
+	padding-bottom: 8px;
+	margin-bottom: 10px;
+}
+.popup-list-item-link{
+	text-decoration: none;
+	color: black;
+}
+/*Burger popup styles end*/
+
+
+
+/*Search popup styles start*/
+.search-popup{
+	display: none;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	position: fixed;
+	background-color: #FFF;
+	top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 2;
+}
+.search-popup-active{
+	display: flex;
+}
+.search-popup-close{
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	right: 50px;
+	top:50px;
+	background-image: url(../svg/cross.svg);
+	background-size: cover;
+	z-index: 3;
+}
+
+.search-popup-form{
+	width: 55%;
+	height: 50px;
+	margin: 0 auto;
+}
+.search__field{
+	width: 70%;
+	height: 100%;
+	border-bottom: 1px solid   #31313163;
+	outline: none;
+}
+/*Search popup styles end*/
+
+
+
+
+/*Body styles start*/
+
+/*Body styles end*/
