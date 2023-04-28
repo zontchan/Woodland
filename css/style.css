@@ -29,7 +29,7 @@
 body{
   line-height: 1.6;
   margin: 0;
-	font-family: 'Roboto';
+	font-family: 'Roboto', sans-serif;
 	font-size: 12px;
 	color: #313131;
 	background-color: #ffffff;
@@ -37,8 +37,7 @@ body{
 	box-sizing: border-box;
 }
 .body-wrapper{
-	width: 67%;
-	height: 1000px;
+	width: 80%;
 	margin: 0 auto;
 }
 .visually-hidden{
@@ -64,9 +63,9 @@ padding-top: 35px;
 padding-bottom: 35px;
 }
 .header-burger-menu{
+	cursor: pointer;
 	box-sizing: border-box;
 	width: 100px;
-	height: 50px;
 	background: url(../svg/menu-hamburger.svg) no-repeat left;
 	background-size: 30px;
 }
@@ -83,8 +82,6 @@ padding-bottom: 35px;
 	color: black;
 }
 .header-ico-wrapper{
-	width: 100px;
-	height: 60px;
 	display: flex;
 	flex-wrap: wrap;
 }
@@ -92,18 +89,21 @@ padding-bottom: 35px;
  opacity: 50%;
 }
 .loupe-ico{
-	width: 50px;
-	height: 60px;
-    background: url(../svg/loupe-ico.svg) no-repeat center;
-	background-size: 30px;
+	width: 25px;
+	height: 25px;
+    background: url(../svg/loupe3.svg) no-repeat center;
+	background-size: 25px;
 	cursor: pointer;
+	padding-top: 30px;
+	margin-right: 20px;
 }
 .basket-ico{
-	width: 50px;
-	height: 60px;
+	width: 25px;
+	height: 25px;
 	background: url(../svg/basket-ico.svg) no-repeat center;
-	background-size: 30px;
+	background-size: 25px;
 	cursor: pointer;
+	padding-top: 30px;
 }
 /*Header logo styles end*/
 
@@ -138,6 +138,9 @@ padding-bottom: 35px;
  font-size:0;
  padding-right: 30px;
 }
+.social:hover{
+	background-size: 20px;
+}
 .wa-ico{
  background-image:url(../svg/wa-ico.svg);
 }
@@ -151,9 +154,29 @@ padding-bottom: 35px;
 	padding-left: 65px;
 }
 .map-catalog-list-item-link{
-	text-decoration: none;
-	color: #313131;
+
 	margin-right:50px ;
+
+	position: relative;
+	color: #313131; /*задаём цвет ссылки*/
+	cursor: pointer;
+	line-height: 1; /*задаём высоту строки*/
+	text-decoration: none;
+}
+.map-catalog-list-item-link::after{
+	display: block;
+	position: absolute;
+	left: 0; /*изменить на right:0;, чтобы изменить направление подчёркивания */
+	width: 0;/*задаём длинну линии до наведения курсора*/
+	height: 1px; /*задаём ширину линии*/
+	background-color: #313131; /*задаём цвет линии*/
+	content: "";
+	transition: width 0.3s ease-out;
+}
+
+.map-catalog-list-item-link:hover::after,
+.map-catalog-list-item-link:focus::after {
+	width: 100%; /*устанавливаем значение 100% чтобы ссылка подчёркивалась полностью*/
 }
 
 /*Header map styles end*/
@@ -272,19 +295,25 @@ padding-bottom: 35px;
 	margin: 0 auto;
 }
 .search__field{
-	width: 70%;
+	width: 90%;
 	height: 100%;
 	padding-bottom: 10px;
 	border: none;
-	border-bottom: 1px solid   #31313163;
+	border-bottom: 1px solid #000000e8;
 	outline: none;
+	font-size: 20px;
 }
 .search__field::placeholder{
-	color: #1a1817;
+	color:  #313131b8;
 	font-family: 'Roboto';
 	font-size: 20px;
 	letter-spacing: 3px;
 }
+.search__field::-webkit-search-decoration,
+.search__field::-webkit-search-cancel-button,
+.search__field::-webkit-search-results-button,
+.search__field::-webkit-search-results-decoration
+{ display: none; }
 
 .search-button{
 	width: 50px;
@@ -292,13 +321,28 @@ padding-bottom: 35px;
 	background-color: transparent;
 
   border:none;
-  background-image:url(../svg/loupe-ico.svg);
+  background-image:url(../svg/loupe3.svg);
   background-repeat:no-repeat;
   background-size:40px;
   background-position: center;
-   
+	cursor: pointer;
 }
 .search-button:hover{
+	background-size: 50px;
+}
+.reset-button{
+	width: 50px;
+	height: 50px;
+	background-color: transparent;
+
+	border:none;
+	background-image:url(../svg/cross.svg);
+	background-repeat:no-repeat;
+	background-size:40px;
+	background-position: center;
+	cursor: pointer;
+}
+.reset-button:hover{
 	background-size: 50px;
 }
 /*Search popup styles end*/
@@ -306,6 +350,65 @@ padding-bottom: 35px;
 
 
 
-/*Body styles start*/
+/*Company info styles start*/
+.company-info{
+	margin-top: 50px;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
 
-/*Body styles end*/
+}
+.company-info-slider-wrap{
+	width: 50%;
+	position: relative;
+	z-index: 1;
+}
+.company-info-img{
+	display: none;
+	width: 100%;
+}
+.company-info-slider-wrap::before{
+	content:"";
+	display:block;
+	position:absolute;
+	background-color: #000000;
+	opacity: 30%;
+	top:0;
+	bottom:0;
+	right:0;
+	left:0;
+	transition: all 0.3s ease-in-out;
+}
+.company-info-slider-wrap:hover::before{
+	opacity: 0;
+}
+.company-info-slider-wrap:hover .slider{
+	opacity: 50%;
+}
+.slider{
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	top: 50%;
+}
+.slider-left{
+	background: url(../svg/icon-arrow-left.svg) no-repeat left;
+	left: 0;
+}
+.slider-right{
+	background: url(../svg/icon-arrow-right.svg) no-repeat right;
+	right: 0;
+}
+.active{
+	display: block;
+}
+.company-info-desc{
+	width: 45%;
+	align-self: center;
+	padding-left: 30px;
+}
+.company-info-title{
+	font-size: 25px;
+}
+
+/*Company info styles end*/
