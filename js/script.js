@@ -90,6 +90,7 @@ sliderArrows.forEach((arrow)=>{
 
 
 /*Products section start*/
+//First section
 const productsSlider = document.querySelectorAll('.products-slider');
 const productsContainer = document.querySelector('.products-container');
 const firstElement = productsContainer.querySelectorAll('.product')[0];
@@ -105,11 +106,14 @@ function showHideIcons(){
 productsSlider.forEach((arrow)=>{
     console.log(firstElementWidth);
     arrow.addEventListener('click',()=>{
-        productsContainer.scrollLeft += arrow.id === 'left' ? -firstElementWidth : firstElementWidth;
+        productsContainer.scrollLeft += arrow.classList.contains('arrow-left') ? -firstElementWidth : firstElementWidth;
         setTimeout(()=>{
             showHideIcons()
         },60);
 
     })
 })
+
+
+//Second section
 /*Products section end*/

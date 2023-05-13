@@ -1,0 +1,24 @@
+{
+  "name": "woodland",
+  "version": "1.0.0",
+  "description": "<h1>Welcome to WOODLAND</h1>\r <img src=\"./Preview.PNG\" alt=\"App preview\">\r <img src=\"./Preview2.PNG\" alt=\"App preview\">",
+  "main": "index.js",
+  "scripts": {
+    "start": "live-server C:\\web\\Woodland",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zontchan/Woodland.git"
+  },
+  "author": "Julia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zontchan/Woodland/issues"
+  },
+  "homepage": "https://github.com/zontchan/Woodland#readme",
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "woodland": "^17.0.2"
+  }
+}

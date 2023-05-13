@@ -442,6 +442,9 @@ padding-bottom: 35px;
 
 
 /*Products section styles start*/
+.products-section{
+	margin-top: 100px;
+}
 .products-section-title{
 	display: flex;
 	align-items: center;
