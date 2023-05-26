@@ -53,8 +53,8 @@ function goSlider(){
     }, 3000);
 }
 
-const sliderArrows = Array.from(document.querySelectorAll('.slider-arrow'));
-sliderArrows.forEach((arrow)=>{
+const infoSlider = Array.from(document.querySelectorAll('.slider-arrow'));
+infoSlider.forEach((arrow)=>{
     if(!arrow.classList.contains('info-slider')){
         return;
     }
@@ -92,7 +92,8 @@ sliderArrows.forEach((arrow)=>{
 /*Products section start*/
 //First section
 const productsSlider = document.querySelectorAll('.products-slider');
-const productsContainer = document.querySelector('.products-container');
+const productsContainer = document.querySelectorAll('.products-container');
+console.log(productsContainer);
 const firstElement = productsContainer.querySelectorAll('.product')[0];
 
 let firstElementWidth = firstElement.clientWidth + 19;
@@ -104,7 +105,6 @@ function showHideIcons(){
 }
 
 productsSlider.forEach((arrow)=>{
-    console.log(firstElementWidth);
     arrow.addEventListener('click',()=>{
         productsContainer.scrollLeft += arrow.classList.contains('arrow-left') ? -firstElementWidth : firstElementWidth;
         setTimeout(()=>{

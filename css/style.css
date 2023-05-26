@@ -52,6 +52,8 @@ body{
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: column;
+
+	margin-bottom: 50px;
 }
 
 .header-logo-block{
@@ -194,10 +196,11 @@ padding-bottom: 35px;
   bottom: 0;
   right: 0;
   left: 0;
-  z-index: 2;
+  z-index: 6;
 }
 .burger-popup-wrapper{
   display:none;
+
 }
 
 .popup-container{
@@ -205,11 +208,14 @@ padding-bottom: 35px;
 	height: 100vh;
 	background-color: white;
 	display: flex;
+
 }
 .popup-content-wrap{
 	width: 80%;
 	margin: 0 auto;
 	padding-top: 35px;
+
+	position: relative;
 }
 .popup-header{
 		font-family: 'Montserrat';
@@ -225,7 +231,7 @@ padding-bottom: 35px;
     width: 30px;
     height: 16px;
     top:10px;
-    left: 250px;
+    left: 200px;
     background-color: transparent;
     border: none;
     padding: 0;
@@ -252,9 +258,43 @@ padding-bottom: 35px;
 	padding-bottom: 8px;
 	margin-bottom: 10px;
 }
+.mobile-popup-list-item{
+	display: none;
+}
 .popup-list-item-link{
 	text-decoration: none;
 	color: black;
+}
+.popup-mobile-search{
+	display: none;
+	width: 100%;
+	position: absolute;
+	bottom: 10px;
+	border-bottom: 1px solid #31313163;
+	justify-content: space-between;
+}
+.popup-mobile-search-field{
+	border: none;
+	outline: none;
+
+	font-size: 16px;
+	font-family: Roboto, sans-serif;
+	letter-spacing: 2px;
+
+	width: 100%;
+}
+.popup-mobile-search-button{
+	width: 10%;
+
+
+	background-color: transparent;
+
+	border:none;
+	background-image:url(../svg/loupe3.svg);
+	background-repeat:no-repeat;
+    background-size: 15px;
+	background-position: center;
+	cursor: pointer;
 }
 /*Burger popup styles end*/
 
@@ -355,7 +395,6 @@ padding-bottom: 35px;
 .company-info{
 	width: 100%;
 	height: 600px;
-	margin-top: 30px;
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: row;
@@ -363,7 +402,10 @@ padding-bottom: 35px;
 }
 .company-info-slider{
 	width: 50%;
+	max-width: 700px;
+	height: 100%;
 	position: relative;
+	overflow: hidden;
 	z-index: 1;
 }
 .slider-item-img::before{
@@ -435,6 +477,7 @@ padding-bottom: 35px;
 }
 .company-info-title{
 	font-size: 25px;
+	font-weight: 300;
 }
 
 /*Company info styles end*/
@@ -462,7 +505,7 @@ padding-bottom: 35px;
 .products-container{
 	display: flex;
 	flex-wrap: nowrap;
-	max-width: 1200px;
+
 	width: 100%;
 	overflow: hidden;
 
@@ -471,7 +514,7 @@ padding-bottom: 35px;
 	scroll-behavior: smooth;
 }
 .product{
-	height: 300px;
+	height: 400px;
 	margin-right: 10px;
 	flex-shrink: 0;
 	width: calc(100%/3);
@@ -520,13 +563,66 @@ padding-bottom: 35px;
 }
 
 @media screen and (max-width: 900px){
+
+	.header-map-block{
+		display: none;
+	}
 	.product{
 		width: calc(100%/2);
 	}
+	.company-info{
+		flex-wrap: nowrap;
+		flex-direction: column;
+
+		height: 100%;
+	}
+	.company-info-slider{
+		height: 100vh;
+		width: 100%;
+	}
+	.company-info-desc{
+		width: 100%;
+		padding: 0;
+	}
 }
 @media screen and (max-width: 550px){
+    .header-logo-block{
+		justify-content: normal;
+	}
 	.product{
 		width: 100%;
 	}
+	.header-ico-wrapper{
+		display: none;
+	}
+	.popup-list-item{
+		margin-bottom: 50px;
+	}
+	.mobile-popup-list-item{
+		display: block;
+	}
+	.popup-mobile-search{
+		display: flex;
+	}
 }
 /*Products section styles end*/
+
+
+/*Footer styles start*/
+.footer{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100px;
+	background-color: #f7f5f5;
+	margin-top: 400px;
+}
+
+.footer-link-item::after{
+	display: none;
+}
+.footer-map-list{
+	margin-bottom: 20px;
+}
+/*Footer styles end*/
