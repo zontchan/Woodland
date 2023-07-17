@@ -1,33 +1,17 @@
+import headerBurger from "./burgerMenu";
+import headerSearch from "./headerSearch";
+
 window.onload = ()=>{
  goSlider();
 }
-
 /*Popup burger start*/
-let burgerMenu = document.querySelector('.header-burger-menu');
-let popup = document.querySelector('.burger-popup-wrapper');
-let buttonClose = document.querySelector('.popup-close');
-burgerMenu.addEventListener('click', popupInteract);
-buttonClose.addEventListener('click', popupInteract);
-
-function popupInteract() {
-    popup.classList.toggle('popup-active');
-    popup.classList.toggle('burger-popup-wrapper');
-}
+headerBurger();
 /*Popup burger end*/
 
 
+
 /*Popup search start*/
-const searchButton = document.querySelector('.loupe-ico');
-const searchPopup = document.querySelector('.search-popup');
-const searchPopupCloseButton = document.querySelector('.search-popup-close');
-
-searchButton.addEventListener('click',()=>{
-  searchPopup.classList.add('search-popup-active');
-})
-
-searchPopupCloseButton.addEventListener('click',()=>{
-    searchPopup.classList.remove('search-popup-active');
-})
+headerSearch();
 /*Popup search start*/
 
 
@@ -94,7 +78,7 @@ infoSlider.forEach((arrow)=>{
 const productsSlider = document.querySelectorAll('.products-slider');
 const productsContainer = document.querySelectorAll('.products-container');
 console.log(productsContainer);
-const firstElement = productsContainer.querySelectorAll('.product')[0];
+const firstElement = productsContaner.querySelectorAll('.product')[0];
 
 let firstElementWidth = firstElement.clientWidth + 19;
 let scrollWidth = productsContainer.scrollWidth - productsContainer.clientWidth;

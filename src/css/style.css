@@ -189,20 +189,17 @@ padding-bottom: 35px;
 
 
 /*Burger popup styles start*/
-.popup-active{
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  position: fixed;
-  background: rgba(0, 0, 0, 0.5);
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  z-index: 6;
-}
 .burger-popup-wrapper{
   display:none;
+	align-items: center;
+	justify-content: flex-start;
+	position: fixed;
+	background: rgba(0, 0, 0, 0.5);
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	z-index: 6;
 
 }
 

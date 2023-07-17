@@ -1,11 +1,12 @@
 {
   "name": "woodland",
   "version": "1.0.0",
-  "description": "<h1>Welcome to WOODLAND</h1>\r <img src=\"./Preview.PNG\" alt=\"App preview\">\r <img src=\"./Preview2.PNG\" alt=\"App preview\">",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "live-server C:\\web\\Woodland",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode production",
+    "start": "webpack serve --mode development"
   },
   "repository": {
     "type": "git",
@@ -18,7 +19,16 @@
   },
   "homepage": "https://github.com/zontchan/Woodland#readme",
   "devDependencies": {
-    "live-server": "^1.2.2",
-    "woodland": "^17.0.2"
+    "@babel/cli": "^7.22.9",
+    "@babel/core": "^7.22.9",
+    "@babel/preset-env": "^7.22.9",
+    "babel-loader": "^9.1.3",
+    "core-js": "^3.31.1",
+    "css-loader": "^6.8.1",
+    "html-loader": "^4.2.0",
+    "html-webpack-plugin": "^5.5.3",
+    "mini-css-extract-plugin": "^2.7.6",
+    "webpack": "^5.88.1",
+    "webpack-cli": "^5.1.4"
   }
 }
