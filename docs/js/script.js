@@ -1,5 +1,6 @@
 import headerBurger from "./burgerMenu";
 import headerSearch from "./headerSearch";
+import goSlider from "./mainSlider";
 
 window.onload = ()=>{
  goSlider();
@@ -18,24 +19,7 @@ headerSearch();
 
 
 /*Company info section start*/
-const sliderImgs = Array.from(document.querySelectorAll('.slider-item-img'));
-
-function goSlider(){
-    setInterval(()=>{
-       for(let i=0; i<sliderImgs.length; i++){
-         if(sliderImgs[i].classList.contains('img-active')){
-             sliderImgs[i].classList.remove('img-active');
-             if(i===(sliderImgs.length-1)){
-                 i=0;
-                 sliderImgs[i].classList.add('img-active');
-             }
-             else {
-                 sliderImgs[i += 1].classList.add('img-active');
-             }
-         }
-        }
-    }, 3000);
-}
+goSlider();
 
 const infoSlider = Array.from(document.querySelectorAll('.slider-arrow'));
 infoSlider.forEach((arrow)=>{
