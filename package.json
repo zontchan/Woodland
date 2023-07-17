@@ -20,7 +20,7 @@
   "bugs": {
     "url": "https://github.com/zontchan/Woodland/issues"
   },
-  "homepage": "https://github.com/zontchan/Woodland#readme",
+  "homepage": "https://zontchan.github.io/Woodland/#",
   "devDependencies": {
     "@types/node": "^20.4.2",
     "core-js": "^3.31.1",
