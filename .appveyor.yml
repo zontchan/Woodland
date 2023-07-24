@@ -1,3 +1,8 @@
+version: 1.0.{build}
+
+environment:
+  GITHUB_TOKEN: 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
+
 image: Ubuntu2004  # образ для сборки
 
 stack: node 19  # окружение
@@ -16,13 +21,9 @@ build: off  # отключаем встроенную в appveyor систему
 build_script:
   - npm run build   # команда сборки
 
-on_success:
+deploy_script:  # скрипт развёртывания
   - git config --global credential.helper store
-  - ps: Set-Content -Path "$HOME\.git-credentials" -Value "https://$($env:GITHUB_TOKEN):x-oauth-basic@github.com`n" -NoNewline
-  - git config --global user.email semenovajuls@icloud.com
-  - git config --global user.name zontchan
+  - git config --global user.name AppVeyor
+  - git config --global user.email ci@appveyor.com
+  - echo "https://$GITHUB_TOKEN:x-oauth-basic@github.com" > "$HOME/.git-credentials"
   - npx push-dir --dir=dist --branch=gh-pages --force --verbose
-
-version: 1.0.{build}
-environment:
-  GITHUB_TOKEN: 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
