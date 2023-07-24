@@ -1,29 +1,51 @@
-version: 1.0.{build}
+name: Woodland
 
-environment:
-  GITHUB_TOKEN: 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
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
 
-image: Ubuntu2004  # образ для сборки
+permissions:
+  checks: write
+  contents: write
+  pages: write
+  id-token: write
+  deployments: write
 
-stack: node 19  # окружение
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
 
-branches:
-  only:
-    - main  # ветка git
+    strategy:
+      matrix:
+        node-version: [18.x]
 
-cache: node_modules  # кеширование
+    steps:
+      - uses: actions/checkout@v3
 
-install:
-  - npm install  # команда установки зависимостей
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
 
-build: off  # отключаем встроенную в appveyor систему сборки
+      - name: Install
+        run: npm i
 
-build_script:
-  - npm run build   # команда сборки
+      - name: Build
+        run: npm run build
 
-deploy_script:  # скрипт развёртывания
-  - git config --global credential.helper store
-  - git config --global user.name AppVeyor
-  - git config --global user.email ci@appveyor.com
-  - echo "https://$GITHUB_TOKEN:x-oauth-basic@github.com" > "$HOME/.git-credentials"
-  - npx push-dir --dir=dist --branch=gh-pages --force --verbose
+      - name: Setup Pages
+        uses: actions/configure-pages@v2
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: 'dist'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
