@@ -18,7 +18,7 @@ build_script:
 
 on_success:
   - git config --global credential.helper store
-  - ps: Set-Content -Path "$HOME\.git-credentials" -Value "https://$($env:my_variable):x-oauth-basic@github.com`n" -NoNewline
+  - ps: Set-Content -Path "$HOME\.git-credentials" -Value "https://$($env:GITHUB_TOKEN):x-oauth-basic@github.com`n" -NoNewline
   - git config --global user.email semenovajuls@icloud.com
   - git config --global user.name zontchan
   - npx push-dir --dir=dist --branch=gh-pages --force --verbose
